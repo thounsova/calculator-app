@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>calculator</title>
+    <title>Calculator</title>
+    <link rel="icon" href="img/chinese-new-year-2022-gif-5.gif" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -11,48 +12,159 @@
       <div class="calculator card">
         <form>
           <div class="display">
-            <input type="text" class="calculator-screen" name="display" />
-          </div>
-          <div class="keys">
-            <input type="button" value="C" onclick="display.value=''" />
             <input
-              type="button"
-              value="DEL"
-              onclick="display.value = display.value.toString().slice(0,-1)"
+              type="text"
+              style="color: rgb(255, 255, 255); font-size: 20px"
+              class="calculator-screen"
+              name="display"
+              id="display"
+              disabled
             />
-            <input type="button" value="." onclick="display.value += '.'" />
-            <input type="button" value="/" onclick="display.value += '/'" />
           </div>
           <div class="keys">
-            <input type="button" value="7" onclick="display.value += '7'" />
-            <input type="button" value="8" onclick="display.value += '8'" />
-            <input type="button" value="9" onclick="display.value += '9'" />
-            <input type="button" value="*" onclick="display.value += '*'" />
-          </div>
-          <div class="keys">
-            <input type="button" value="4" onclick="display.value += '4'" />
-            <input type="button" value="5" onclick="display.value += '5'" />
-            <input type="button" value="6" onclick="display.value += '6'" />
-            <input type="button" value="-" onclick="display.value += '-'" />
-          </div>
-          <div class="keys">
-            <input type="button" value="1" onclick="display.value += '1'" />
-            <input type="button" value="2" onclick="display.value += '2'" />
-            <input type="button" value="3" onclick="display.value += '3'" />
-            <input type="button" value="+" onclick="display.value += '+'" />
-          </div>
-          <div class="keys">
-            <input type="button" value="00" onclick="display.value += '00'" />
-            <input type="button" value="0" onclick="display.value += '0'" />
             <input
+              class="tow"
+              style="background-color: rgb(96, 201, 36)"
+              type="button"
+              value="C"
+              onclick="clearDisplay()"
+            />
+            <input
+              class="tow"
+              style="background-color: rgb(214, 67, 67)"
+              type="button"
+              value="AC"
+              onclick="deleteLastCharacter()"
+            />
+            <input
+              class="tow"
+              style="background-color: rgb(96, 201, 36)"
+              type="button"
+              value="."
+              onclick="appendToDisplay('.')"
+            />
+            <input
+              class="tow"
+              style="background-color: rgb(96, 201, 36)"
+              type="button"
+              value="/"
+              onclick="appendToDisplay('/')"
+            />
+          </div>
+          <div class="keys">
+            <input
+              class="one"
+              type="button"
+              value="7"
+              onclick="appendToDisplay('7')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="8"
+              onclick="appendToDisplay('8')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="9"
+              onclick="appendToDisplay('9')"
+            />
+            <input
+              class="tow"
+              style="background-color: rgb(201, 36, 36)"
+              type="button"
+              value="x"
+              onclick="appendToDisplay('*')"
+            />
+          </div>
+          <div class="keys">
+            <input
+              class="one"
+              type="button"
+              value="4"
+              onclick="appendToDisplay('4')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="5"
+              onclick="appendToDisplay('5')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="6"
+              onclick="appendToDisplay('6')"
+            />
+            <input
+              class="tow"
+              type="button"
+              value="-"
+              onclick="appendToDisplay('-')"
+            />
+          </div>
+          <div class="keys">
+            <input
+              class="one"
+              type="button"
+              value="1"
+              onclick="appendToDisplay('1')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="2"
+              onclick="appendToDisplay('2')"
+            />
+            <input
+              class="one"
+              type="button"
+              value="3"
+              onclick="appendToDisplay('3')"
+            />
+            <input
+              class="tow"
+              style="background-color: rgb(96, 201, 36)"
+              type="button"
+              value="+"
+              onclick="appendToDisplay('+')"
+            />
+          </div>
+          <div class="keys">
+            <input
+              class="tow"
+              type="button"
+              value="00"
+              onclick="appendToDisplay('00')"
+            />
+            <input
+              class="tow"
+              type="button"
+              value="0"
+              onclick="appendToDisplay('0')"
+            />
+            <input
+              class="tow"
+              type="button"
+              value="%"
+              onclick="appendToDisplay('%')"
+            />
+            <input
+              class="three"
               type="button"
               value="="
-              onclick="display.value = eval(display.value)"
-              style="width: 106px"
+              onclick="evaluateExpression()"
+              style="
+                width: 130px;
+                background-color: rgb(255, 0, 0);
+                color: rgb(255, 255, 255);
+              "
             />
           </div>
         </form>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
